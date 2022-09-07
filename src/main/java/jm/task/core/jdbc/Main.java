@@ -10,12 +10,14 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException {
         // реализуйте алгоритм здесь
-        UserDao userDao = new UserDaoJDBCImpl();
+        UserServiceImpl userService = new UserServiceImpl();
 
-        userDao.saveUser("Иван", "Иванов", (byte) 20);
-        userDao.saveUser("Петр", "Сидоров", (byte) 30);
-        userDao.saveUser("Ольга", "Коновалова", (byte) 40);
-        userDao.saveUser("Мария", "Кошкина", (byte) 50);
-
+        userService.saveUser("Иван", "Иванов", (byte) 20);
+        userService.saveUser("Петр", "Сидоров", (byte) 30);
+        userService.saveUser("Ольга", "Коновалова", (byte) 40);
+        userService.saveUser("Мария", "Кошкина", (byte) 50);
+        userService.getAllUsers();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
